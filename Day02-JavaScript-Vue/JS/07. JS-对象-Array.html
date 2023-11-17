@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-Array</title>
+</head>
+<!-- 
+    •length         设置或返回数组中元素的数量。
+
+    •forEach()      遍历数组中的每个有值的元素，并调用一次传入的函数
+    •push ()        将新元素添加到数组的末尾，并返回新的长度。
+    •splice()       从数组中删除元素 
+-->
+<body>
+    <script>
+        // 定义数组
+        // var arr = new Array(1,2,3,4);
+        var arr = [1,2,3,4];
+        console.log(arr[0]);
+        console.log(arr[2]);
+
+        // 特点：长度可变，数据可变 
+        arr[10] = 50;
+        console.log(arr[10]);
+        console.log(arr[9]);
+        console.log(arr[8]);
+
+        arr[9] = "a";
+        arr[8] = true;
+        console.log(arr);
+
+        for(let i =0; i< arr.length; i++){
+            console.log(arr[i]);
+        }
+
+        // forEach:遍历数组中有值的元素
+        arr.forEach(function (e){
+            console.log(e);
+        })
+        //•push () 将新元素添加到数组的末尾，并返回新的长度。
+        arr.push(7,8,9);
+        //•splice() 从数组中删除元素 
+        arr.splice(2,2);
+    </script>
+</body>
+</html>
