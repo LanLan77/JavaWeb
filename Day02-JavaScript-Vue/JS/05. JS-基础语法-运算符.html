@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-基础语法-运算符</title>
+</head>
+<!-- 
+        == 与 ===
+            == 会进行数据类型转换
+            === 不会进行数据类型转换
+ -->
+
+ <!-- 
+    类型转换
+        •字符串类型转为数字：
+            •將字符串宇面值转为数字。如果字面值不是数宇，则转为NaN。
+        •其他类型转为boolean:
+            •Number：0 和NaN为false，其他均转为true。
+            •string：空字符串为false，其他均转为true。
+            •Null 和undefined ：均转为false。
+  -->
+<body>
+    <script>
+        var age = 20;
+        var _age = "20";
+        var $age = 20; 
+
+        alert(age == _age); // 因为==会进行数据类型转换，所以 true
+        alert(age === _age); // === 不会进行数据类型转换，所以 false
+        alert(age === $age); // 类型一样，值一样，所以 true
+        
+        // 类型转换——其他类型转换成数字
+        alert(parseInt("12")); // 12
+        alert(parseInt("12A45"));// 12
+        alert(parseInt("A45")); // 因为第一个没有数字，转换NaN
+
+        // 类型转换 - 其他类型转换boolean
+        if(0){ // false
+            alert("0转换为false")
+        }
+        if(NaN){ // false
+            alert("NaN转换为false")
+        } 
+        if(-1){ // true
+            alert("除了0和Nah都是true")
+        }
+        if(" "){ // false
+            alert("空字符串是false，其他都是true")
+        }
+
+        if(null){ // false
+            alert("null是false")
+        }
+
+        if(undefined){ // false
+            alert("undefined转化为false")
+        }
+
+    </script>
+    
+</body>
+</html>
