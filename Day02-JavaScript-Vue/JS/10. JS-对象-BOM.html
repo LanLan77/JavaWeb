@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-BOM</title>
+    <!-- 
+        BOM:
+        •概念：Browser Object Model 浏览器对象模型，允许JavaScript与浏览器对话，JavaScript 将浏览器的各个组成部分封装为对象。
+        •组成： 
+            • Window：浏览器窗口对象
+            • Navigator：浏览器对象
+            • Screen：屏幕对象  
+            • History：历史记录对象
+            •  Location：地址栏对象
+     -->
+
+     <!-- 
+        Window
+
+        •介绍：浏览器窗口对象。
+        •获取：直接使用window，其中window.可以省略。i window.alert("Hello window");
+        •属性
+            • history：对History 对象的只读引用。请参阅 History 对象。
+            • location：用于窗口或框架的 Location 对象。请参闭 Location 对象。
+            • navigator：对 Navigator对象的只读引用。请参阅 Navigator对象。
+        •方法
+            • alert()：显示带有一段消息和一个确认按钮的警告框。
+            • confirm()：显示带有一段消息以及确认按钮和取消按钮的对话框。
+            • setlnterval()：按照指定的周期（以毫秒计）来调用函数或计算表达式。
+            • setTimeout()：在指定的毫秒数后调用函数或计算表达式。
+            • alert("Hello Window");
+      -->
+
+      <!-- 
+
+        Location:
+            •介绍：地址栏对象。
+            •获取：使用 window.location 获取，其中window. 可以省略。
+                window. 1ocation.属性； location.属性
+            •属性：
+                •href：设置或返回完整的URL。    location.href = "https://www.itcast.cn";
+
+       -->
+</head>
+<body>
+    <script>
+        // 获取window 
+        window.alert("hello BOM");
+        alert("hello bom window");
+        // 方法 
+        // confirm() - 对话框
+        var i = 0;
+        var flag =confirm("确认删除该记录吗?");
+        alert(flag);
+
+        // 定时器 - setInterval()   周期性执行某一个函数
+        setInterval(function(){
+            i++;
+            console.log("定时器执行了"+i+"次"); 
+        },2000)
+
+        //定时器 - setTimeout()     延迟指定时间执行一次
+        setTimeout(function(){
+            alert('setTimeout')
+        },3000)
+
+        // Location 
+        alert(location.href);
+
+        location.href = "https://www.bilibili.com/video/BV1m84y1w7Tb?p=24&spm_id_from=pageDriver&vd_source=be66e2e596d7cad20f6838213c9a00d2"
+         
+    </script>
+    
+</body>
+</html>
