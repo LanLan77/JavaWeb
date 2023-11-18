@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-JSON</title>
+</head>
+<!-- 
+    •概念：Javascript Object Notation,Javascript对象标记法。
+    •JSON 是通过Javascript 对象标记法书写的文本。
+    •由于其语法简单，层次结构鲜明，现多用于作为数据载体，在网络中进行数据传输。
+    
+    //JSON字符串转换JSON对象
+        var obj = JSON.parse(jsonStr);
+        alert(obj.name); 
+
+    //JSON对象转换JSON字符串
+        alert(JSON.stringify(obj));
+ -->
+<body>
+    <SCript>
+        // 自定义对象
+        var user = {
+            name: "Tom",
+            age: 10,
+            gender:"female",
+            //eat: function(){
+            //    alert('用膳')
+            //}
+            eat(){
+                alert('用膳')
+            }
+        }
+        alert(user.name)
+        user.eat();
+
+        // 定义JSON
+        var jsonStr = '{"name":"Mark", "age":18, "address":["北京","上海","西 "]}'
+
+        //JSON字符串转换JSON对象
+        var obj = JSON.parse(jsonStr);
+        alert(obj.name); 
+
+        //JSON对象转换JSON字符串
+        alert(JSON.stringify(obj));
+    </SCript>
+</body>
+</html>
