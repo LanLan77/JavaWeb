@@ -1,0 +1,45 @@
+<!-- 
+ 常用指令
+•指令：HTML标签上带有 V-前缀的特殊属性，不同指令具有不同含义。例如：v-if， v-for...
+•常用指令
+    指令            作用
+    v-bind          为HTML标签鄉定属性值，如设置 href, css样式等
+    v-model         在表单元素上创建双向数据绑定
+    V-On            为HTML标签绑定事件
+    v-if            条件性的渲染某元素，判定为true时渲染,否则不渲染
+    v-else-if       条件性的渲染某元素，判定为true时渲染,否则不渲染
+    v-else          条件性的渲染某元素，判定为true时渲染,否则不渲染
+    v-show          根据条件展示某元素，区别在于切换的是display属性的值
+    v-for           列表渲染，遍历容器的元素或者对象的属性
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Vue-指令-v-bind</title>
+     <script src="js/vue.js"></script>
+ </head>
+ <body>
+     <div id="app">
+        <!-- <input type="button" value="点我一下" v-on:click ="handle()"> -->
+        <input type="button" value="点我一下" @click ="handle()">
+     </div>
+ </body>
+ <script>
+     //定义Vue对象
+     new Vue({
+         el: "#app", //vue接管区域
+         data:{
+
+         },
+         methods:{
+            handle: function(){
+                alert("你点我了")
+            }
+         }
+     })
+ </script>
+ </html>
