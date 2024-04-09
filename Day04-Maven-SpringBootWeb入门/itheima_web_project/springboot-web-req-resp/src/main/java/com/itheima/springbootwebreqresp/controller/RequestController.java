@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.itheima.springbootwebreqresp.pojo.User;
 
+import java.util.Arrays;
+import java.util.List;
+
 /*1. 原始方式获取请求参数
         * ﻿﻿controller方法形参中声明HttpServletRequest对象
         * ﻿调用对象的getParameter(参数名）
@@ -99,5 +102,33 @@ public class RequestController {
     public String complexPojo(User user){
         System.out.println(user);
         return "complexPojo OK ";
+    }
+
+
+    /**
+     *  数组参数
+     *  数组参数：请求参数名与形参数组名称相同且请求参数为多个，定义数组类型形参即可接收参数
+     *
+     * @param hobby
+     * @return
+     */
+    @RequestMapping("/arrayParam")
+    public String arrayParam(String[] hobby){
+        System.out.println(Arrays.toString(hobby));
+        return "arrayParam OK ";
+    }
+
+
+    /**
+     *  集合参数
+     *  集合参数：请求参数名与形参数组名称相同且请求参数为多个，定义集合类型形参即可接收参数
+     *
+     * @param hobby
+     * @return
+     */
+    @RequestMapping("/listParam")
+    public String listParam(@RequestParam(value = "hobby", required = false) List<String> hobby){
+        System.out.println(hobby);
+        return "listParam OK ";
     }
 }
