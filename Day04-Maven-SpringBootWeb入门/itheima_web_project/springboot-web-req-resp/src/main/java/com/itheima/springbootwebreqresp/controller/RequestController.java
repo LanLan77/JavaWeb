@@ -3,10 +3,7 @@ package com.itheima.springbootwebreqresp.controller;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.itheima.springbootwebreqresp.pojo.User;
 
 import java.time.LocalDateTime;
@@ -109,7 +106,7 @@ public class RequestController {
 
 
     /**
-     *  数组参数
+     *  2. 数组参数
      *  数组参数：请求参数名与形参数组名称相同且请求参数为多个，定义数组类型形参即可接收参数
      *
      * @param hobby
@@ -123,7 +120,7 @@ public class RequestController {
 
 
     /**
-     *  集合参数
+     *  3. 集合参数
      *  集合参数：请求参数名与形参数组名称相同且请求参数为多个，定义集合类型形参即可接收参数
      *
      * @param hobby
@@ -137,7 +134,7 @@ public class RequestController {
 
 
     /**
-     *  时间参数
+     *  4. 时间参数
      *  时间参数：使用@DateTimeFormat注解完成日期参数格式转换
      *
      * @param /dateParam
@@ -149,10 +146,39 @@ public class RequestController {
         return "date OK ";
     }
 
+    /**
+     * 5. Json参数
+     * @param user
+     * @return
+     */
     @RequestMapping("/jsonParam")
     public String jsonParam(@RequestBody User user){
         System.out.println(user);
         return "jsonParam Ok";
+    }
+
+    /**
+     * 6. 路径参数
+     * @PathVariable 获取路径参数
+     * @param id
+     * @return
+     */
+    @RequestMapping("/path/{id}")
+    public String pathParam(@PathVariable Integer id){
+        System.out.println("路径是："+id);
+        return "pathParam Ok";
+    }
+
+    /**
+     * 7. 路径参数
+     * @PathVariable 获取路径参数
+     * @param id
+     * @return
+     */
+    @RequestMapping("/path/{id}/{name}")
+    public String pathParam2(@PathVariable Integer id,@PathVariable String name){
+        System.out.println("路径是："+id+"名字是： "+name);
+        return "pathParam2 Ok";
     }
 
 }
