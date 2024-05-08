@@ -56,4 +56,12 @@ class SpringbootMybatisCrudApplicationTests {
     }
 
 
+
+    //根据ID查询员工
+    @Test
+    public void testGetById(){
+        Emp emp = empMapper.getById(18);
+        System.out.println(emp);
+    }
+
 }
